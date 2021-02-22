@@ -1,16 +1,28 @@
-
 <h3>{{equipe}}</h3>
 
 <ul>
     <li *ngFor="let c of names">{{c}}</li>
 </ul>
 
-<table border="1" align="center">
-<tr><th>Nom</th><th>Age</th><th>Email</th></tr>
-<tr *ngFor="let student of  students">
-    <td>{{student.name}}</td>
-    <td>{{student.age}}</td>
-    <td>{{student.email}}</td>
-</tr>
-<caption align="bottom">Liste de mes étudiants</caption>
-</table>
+
+<div *ngIf="students; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <table border="1" align="center">
+        <tr>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let student of  students">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.email}}</td>
+        </tr>
+        <caption align="bottom">Liste de mes étudiants</caption>
+    </table>
+</ng-template>
+
+<ng-template #elseBlock> <div class="btn btn-danger">Liste vide!</div> </ng-template>
+<br/><br/>
+<button class="btn btn-primary">Cliquer ici</button>

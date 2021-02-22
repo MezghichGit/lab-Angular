@@ -11,6 +11,8 @@ export class ListEquipeComponent implements OnInit {
   equipe: string = "Global Knowledge - Equipe Mobile"
   names : string[] = ["Bédélo","Nassim","Mariem","Isabelle","Lyam","Ilhem","Safa","Kenji","Catherine","Olivier","Ousmana","Wendong","Assia","Rado"]
   
+  //students: Candidat[];
+  
   students: Candidat[] = [
     {
       name: "Claude",
@@ -33,6 +35,7 @@ export class ListEquipeComponent implements OnInit {
       email : "m@gmail.com"
     }
   ];
+  
   constructor() { }
 
   ngOnInit(): void {
