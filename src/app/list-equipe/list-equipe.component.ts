@@ -7,10 +7,10 @@ import { Candidat } from '../models';
 })
 export class ListEquipeComponent implements OnInit {
 
-
+  formateur: string = "Amine";
   equipe: string = "Global Knowledge - Equipe Mobile"
   names : string[] = ["Bédélo","Nassim","Mariem","Isabelle","Lyam","Ilhem","Safa","Kenji","Catherine","Olivier","Ousmana","Wendong","Assia","Rado"]
-  
+  res: boolean = false;
   //students: Candidat[];
   
   students: Candidat[] = [
@@ -41,4 +41,12 @@ export class ListEquipeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  public affichage() {
+    alert("vous êtes :" + this.formateur);
+   }
+
+   public display() {
+     this.res = !this.res;
+   }
 }

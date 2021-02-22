@@ -1,21 +1,22 @@
-<h3>{{equipe}}</h3>
+<h3 [hidden]="res">{{equipe}}</h3>
 
+<button (click)="display()">Cliquer pour afficher</button>
 <ul>
-    <li *ngFor="let c of names">{{c}}</li>
+    <li *ngFor="let c of names">{{c| mypipe}}</li>
 </ul>
 
 
 <div *ngIf="students; then thenBlock else elseBlock"></div>
 
 <ng-template #thenBlock>
-    <table border="1" align="center">
+    <table border="1" align="center" class="table">
         <tr>
             <th>Nom</th>
             <th>Age</th>
             <th>Email</th>
         </tr>
         <tr *ngFor="let student of  students">
-            <td>{{student.name}}</td>
+            <td>{{student.name | uppercase}}</td>
             <td>{{student.age}}</td>
             <td>{{student.email}}</td>
         </tr>
@@ -24,5 +25,9 @@
 </ng-template>
 
 <ng-template #elseBlock> <div class="btn btn-danger">Liste vide!</div> </ng-template>
+
+
 <br/><br/>
-<button class="btn btn-primary">Cliquer ici</button>
+<button class="btn btn-primary" (click)="affichage()">Qui vous êtes</button>
+
+<div>Formation Angular 11- Ionic 6</div>
