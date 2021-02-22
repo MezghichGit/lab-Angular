@@ -1,0 +1,16 @@
+
+<h3>{{equipe}}</h3>
+
+<ul>
+    <li *ngFor="let c of names">{{c}}</li>
+</ul>
+
+<table border="1" align="center">
+<tr><th>Nom</th><th>Age</th><th>Email</th></tr>
+<tr *ngFor="let student of  students">
+    <td>{{student.name}}</td>
+    <td>{{student.age}}</td>
+    <td>{{student.email}}</td>
+</tr>
+<caption align="bottom">Liste de mes étudiants</caption>
+</table>
