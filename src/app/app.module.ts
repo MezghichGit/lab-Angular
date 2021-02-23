@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListEquipeComponent } from './list-equipe/list-equipe.component';
 import { AddEquipeComponent } from './add-equipe/add-equipe.component';
 import { MypipePipe } from './mypipe.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MypipePipe } from './mypipe.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

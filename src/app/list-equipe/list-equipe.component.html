@@ -1,3 +1,24 @@
+
+<h1>String interpolation, Property Binding, Event Binding and two binding</h1>
+<div style="border:solid; border-color:red">
+
+Votre nom est : {{nom}}
+
+<br/><br/>
+Drapeau de la France : 
+<img [title]="titre" alt="Drapeu de la France" [src]="photo"/>
+
+<button class="btn btn-primary"  (click)="fn()">Cliquer</button>
+
+<br/><br/>
+<hr/>
+<input type="text" [(ngModel)]="pays" />
+
+{{pays}}
+</div>
+
+<hr/>
+
 <h3 [hidden]="res">{{equipe}}</h3>
 
 <button (click)="display()">Cliquer pour afficher</button>
@@ -31,3 +52,22 @@
 <button class="btn btn-primary" (click)="affichage()">Qui vous êtes</button>
 
 <div>Formation Angular 11- Ionic 6</div>
+
+
+<br><br>
+
+<div (mouseenter)="info()" style="border:dashed">Une nouvelle div</div>
+
+
+Le logo de Global Knowledge est :
+<img [src]="urlimg">
+Le cours d'aujourd'hui est : {{cours}}
+
+<hr/>
+
+
+<h4>Taper le nom de la formation</h4>
+<input type="text" [(ngModel)]="formation">
+
+{{formation}}
+
