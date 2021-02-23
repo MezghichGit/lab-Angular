@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Candidat } from '../models';
+import { AlbumsService } from '../services/albums.service';
 @Component({
   selector: 'app-list-equipe',
   templateUrl: './list-equipe.component.html',
@@ -13,28 +14,7 @@ export class ListEquipeComponent implements OnInit {
   res: boolean = false;
   //students: Candidat[];
   
-  students: Candidat[] = [
-    {
-      name: "Claude",
-      age: 25,
-      email : "c@gmail.com"
-    },
-    {
-      name: "Olivier",
-      age: 26,
-      email : "o@gmail.com"
-    },
-    {
-      name: "Jean",
-      age: 30,
-      email : "j@gmail.com"
-    },
-    {
-      name: "Mariem",
-      age: 25,
-      email : "m@gmail.com"
-    }
-  ];
+  students: Candidat[]; 
   
 
   formation: string = "Ionic-Angular";
@@ -46,9 +26,10 @@ export class ListEquipeComponent implements OnInit {
   photo: string = "http://assets.stickpng.com/images/580b585b2edbce24c47b27ff.png";
   
   pays:string="France"
-  constructor() { }
+  constructor(private album : AlbumsService) { }
 
   ngOnInit(): void {
+    this.students = this.album.listCandidats();
   }
 
   public add() {
